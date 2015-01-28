@@ -4,11 +4,11 @@
  */
 require_once __DIR__ . '/lib/common.inc.php';
 
-$lNeedValid = [
+$lNeedValid = array(
 	//'sgnpayment' => 'sgnpayment',
 	'balloon_reward' => 'balloon_reward',
 	'calendar' => 'calendar',
-];
+);
 
 echo "\n";
 echo "======= Valid Config =======\n\n";
