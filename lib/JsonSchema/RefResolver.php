@@ -40,7 +40,7 @@ class RefResolver
      */
     protected $uriRetriever = null;
 
-	private $lFunction = [];
+	private $lFunction = array();
 
     public $notIncludeFunction = false;
 
