@@ -334,7 +334,7 @@ class RefResolver
 		if(is_string($schema->$function)) {
 			$schema->$function = $this->fetchFunctionValid($schema->$function, $functionDir);
 		}elseif(is_array($schema->$function)) {
-			$lFunction = [];
+			$lFunction = array();
 			foreach($schema->$function as $sFunction) {
 				$lFunction[] = $this->fetchFunctionValid($sFunction, $functionDir);
 			}
