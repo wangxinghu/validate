@@ -8,6 +8,8 @@ $lNeedValid = array(
 	//'sgnpayment' => 'sgnpayment',
 	'balloon_reward' => 'balloon_reward',
 	'calendar' => 'calendar',
+    'cook_activity_step' => 'cook_activity_step',
+    'gifts' => 'gifts',
 );
 
 echo "\n";

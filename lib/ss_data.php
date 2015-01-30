@@ -10,11 +10,19 @@ class Ss_Data {
         }
         return self::$storeData;
     }
+    public static function getStoreById($id) {
+        $storeData = self::getStoreData();
+        return isset($storeData[$id]) ? $storeData[$id] : new stdClass();
+    }
     public static function getStoryData() {
         if ( self::$storyData === null ) {
             self::$storyData = (array) require CONF_PATH . '../i18n/en/storystatic.php';
         }
         return self::$storyData;
+    }
+    public static function getStoryById($id) {
+        $storyData = self::getStoryData();
+        return isset($storyData[$id]) ? $storyData[$id] : new stdClass();
     }
     public static function getRvData() {
         if ( self::$rvData === null ) {
@@ -28,6 +36,19 @@ class Ss_Data {
         }
         return self::$rvText;
     }
+    public static function isInStore($id) {
+        $storeData = self::getStoreData();
+        return array_key_exists($id, $storeData) ? true : false;
+    }
+    public static function isInStory($id) {
+        $storyData = self::getStoryData();
+        return array_key_exists($id, $storyData) ? true : false;
+    }
+    public static function isInRv($id) {
+        $rvText = self::getRvText();
+        return strpos($rvText, '/'.$id.'.') === false ? false : true;
+    }
+
     public static function destruct() {
         if (self::$storeData !== null) {
             unset(self::$storeData);

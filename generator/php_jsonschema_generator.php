@@ -18,7 +18,7 @@
         public function is_assoc($arr_data) {
             if(is_array($arr_data)) {
                 $keys = array_keys($arr_data);
-                return $keys != array_keys($keys);
+                return $keys !== array_keys($keys);
             }
             return false;
         }

@@ -1,0 +1,21 @@
+{
+    "$schema":"http://json-schema.org/draft-04/schema#",
+    "id":"/",
+    "type":"object",
+    "$function_valid": "valid_gifts",
+    "properties":{
+        "story_gifts":{
+            "id":"story_gifts",
+            "type":"array",
+            "items":{
+                "id":"0",
+                "type":"integer"
+            }
+        }
+    },
+    "required":[
+        "story_gifts"
+    ],
+    "additionalProperties":false
+
+}

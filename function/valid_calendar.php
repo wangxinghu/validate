@@ -1,14 +1,11 @@
 <?php
 return function ($calendar) {
     $bigReward = $calendar->big_reward;
-    $storeData = Ss_Data::getStoreData();
-    $rvText = Ss_Data::getRvText();
-
     foreach ($bigReward as $m => $itemId) {
-        if (!array_key_exists($itemId, $storeData)) {
+        if (Ss_Data::isInStore($itemId) === false) {
             return "big_reward month:$m itemId:$itemId not in store";
         }
-        if (strpos($rvText, '/'.$itemId.'.zip') === false) {
+        if (Ss_Data::isInRv($itemId) === false) {
             return "big_reward month:$m itemId:$itemId not in resourceversion";
         }
     }
